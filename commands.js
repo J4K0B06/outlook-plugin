@@ -21,7 +21,7 @@ function reportPhishing(event) {
         <p>This message was reported as phishing.</p>
         <p><strong>From:</strong> ${item.from?.emailAddress}</p>
         <p><strong>Subject:</strong> ${item.subject}</p>
-        <p>Body: (please forward the original message manually if needed)</p>
+        <p>Body: (please forward the original message MANUALLY)</p>
       `
     });
   }
