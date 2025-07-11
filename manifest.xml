@@ -4,7 +4,7 @@
   <Version>1.0.0.0</Version>
   <ProviderName>Safebyte</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
-  <DisplayName DefaultValue="Safebyte Phishing Checker"/>
+  <DisplayName DefaultValue="Phishing Checker"/>
   <Description DefaultValue="Send suspicious emails to phishing@safebyte.be for review."/>
   <IconUrl DefaultValue="https://j4k0b06.github.io/outlook-plugin/assets/icon-64.png"/>
   <HighResolutionIconUrl DefaultValue="https://j4k0b06.github.io/outlook-plugin/assets/icon-128.png"/>
