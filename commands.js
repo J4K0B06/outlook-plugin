@@ -3,7 +3,13 @@ Office.onReady(() => {
 });
 
 function reportPhishing(event) {
+  console.log("reportPhishing triggered");
   const item = Office.context.mailbox.item;
+  if (!item) {
+    console.log("No item found");
+  } else {
+    console.log("Item subject:", item.subject);
+  }
 
   Office.context.mailbox.displayNewMessageForm({
     toRecipients: ["info@safebyte.be"],
