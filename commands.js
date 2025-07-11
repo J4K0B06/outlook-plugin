@@ -1,5 +1,5 @@
 Office.onReady(() => {
-  // Office is ready
+  // Initialization if needed
 });
 
 function reportPhishing(event) {
