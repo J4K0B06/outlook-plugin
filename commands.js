@@ -2,7 +2,6 @@ Office.onReady(() => {
   // Office is ready
 });
 
-/*
 function reportPhishing(event) {
   console.log("reportPhishing triggered");
   const item = Office.context.mailbox.item;
@@ -23,17 +22,6 @@ function reportPhishing(event) {
     `
   });
 
-  event.completed();
-}
-*/
-
-function reportPhishing(event) {
-  console.log("reportPhishing triggered");
-  Office.context.mailbox.displayNewMessageForm({
-    toRecipients: ["info@safebyte.be"],
-    subject: "Test phishing report",
-    htmlBody: "<p>Test phishing report body</p>"
-  });
   event.completed();
 }
 
