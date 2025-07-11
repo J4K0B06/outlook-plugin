@@ -89,8 +89,8 @@
                     <bt:Image size="32" resid="Icon.32x32" />
                     <bt:Image size="80" resid="Icon.80x80" />
                   </Icon>
-                  <Action xsi:type="ExecuteFunction">
-                    <FunctionName>reportPhishing</FunctionName>
+                  <Action xsi:type="ShowTaskpane">
+                    <SourceLocation resid="Taskpane.Url" />
                   </Action>
                 </Control>
                 <!-- Go to http://aka.ms/ButtonCommands to learn how to add more Controls: ExecuteFunction and Menu -->
@@ -109,7 +109,7 @@
         <bt:Image id="Icon.80x80" DefaultValue="https://j4k0b06.github.io/outlook-plugin/assets/icon-80.png"/>
       </bt:Images>
       <bt:Urls>
-        <bt:Url id="Commands.Url" DefaultValue="https://j4k0b06.github.io/outlook-plugin/commands.html" />
+        <bt:Url id="Taskpane.Url" DefaultValue="https://j4k0b06.github.io/outlook-plugin/taskpane.html"/>
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="GroupLabel" DefaultValue="Safebyte Tools"/>
