@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0" xsi:type="MailApp">
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+           xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0"
+           xsi:type="MailApp">
+
   <Id>795be339-0d69-4a82-9e63-27d2e37f1ff1</Id>
   <Version>1.0.0.0</Version>
   <ProviderName>Safebyte</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
-  <DisplayName DefaultValue="Phishing Checker"/>
+  <DisplayName DefaultValue="Safebyte Phishing"/>
   <Description DefaultValue="Send suspicious emails to phishing@safebyte.be for review."/>
   <IconUrl DefaultValue="https://j4k0b06.github.io/outlook-plugin/assets/icon-64.png"/>
   <HighResolutionIconUrl DefaultValue="https://j4k0b06.github.io/outlook-plugin/assets/icon-128.png"/>
@@ -21,17 +26,14 @@
     </Sets>
   </Requirements>
   <FormSettings>
-    <Form xsi:type="ItemRead">
-      <DesktopSettings>
-        <!-- Removed taskpane, so no source location here -->
-      </DesktopSettings>
-    </Form>
+    <Form xsi:type="ItemRead"/>
   </FormSettings>
   <Permissions>ReadWriteItem</Permissions>
   <Rule xsi:type="RuleCollection" Mode="Or">
     <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read"/>
   </Rule>
   <DisableEntityHighlighting>false</DisableEntityHighlighting>
+
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
     <Requirements>
       <bt:Sets DefaultMinVersion="1.3">
