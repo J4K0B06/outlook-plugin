@@ -1,2 +1,22 @@
-Office.onReady(function(){}),Office.actions.associate("action",function(e){var i={type:Office.MailboxEnums.ItemNotificationMessageType.InformationalMessage,message:"Performed action.",icon:"Icon.80x80",persistent:!0};Office.context.mailbox.item.notificationMessages.replaceAsync("ActionPerformanceNotification",i),e.completed()});
-//# sourceMappingURL=commands.js.map
+Office.onReady(() => {
+  // Office is ready
+});
+
+function reportPhishing(event) {
+  const item = Office.context.mailbox.item;
+
+  Office.context.mailbox.displayNewMessageForm({
+    toRecipients: ["phishing@safebyte.be"],
+    subject: "Suspicious email: " + item.subject,
+    htmlBody: `
+      <p>This message was reported as phishing.</p>
+      <p><strong>From:</strong> ${item.from?.emailAddress || 'Unknown'}</p>
+      <p><strong>Subject:</strong> ${item.subject}</p>
+      <p>Please forward the original email as an attachment for full headers.</p>
+    `
+  });
+
+  event.completed();
+}
+
+Office.actions.associate("reportPhishing", reportPhishing);
