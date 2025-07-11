@@ -5,7 +5,7 @@
   <ProviderName>Safebyte</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Safebyte Phishing Checker"/>
-  <Description DefaultValue="A template to get started."/>
+  <Description DefaultValue="Send suspicious emails to phishing@safebyte.be for review."/>
   <IconUrl DefaultValue="https://j4k0b06.github.io/outlook-plugin/assets/icon-64.png"/>
   <HighResolutionIconUrl DefaultValue="https://j4k0b06.github.io/outlook-plugin/assets/icon-128.png"/>
   <SupportUrl DefaultValue="https://j4k0b06.github.io/outlook-plugin/"/>
@@ -23,8 +23,7 @@
   <FormSettings>
     <Form xsi:type="ItemRead">
       <DesktopSettings>
-        <SourceLocation DefaultValue="https://j4k0b06.github.io/outlook-plugin/taskpane.html"/>
-        <RequestedHeight>250</RequestedHeight>
+        <!-- Removed taskpane, so no source location here -->
       </DesktopSettings>
     </Form>
   </FormSettings>
@@ -47,26 +46,11 @@
             <OfficeTab id="TabDefault">
               <Group id="msgReadGroup">
                 <Label resid="GroupLabel"/>
-                <Control xsi:type="Button" id="msgReadOpenPaneButton">
-                  <Label resid="TaskpaneButton.Label"/>
+                <Control xsi:type="Button" id="ReportPhishingButton">
+                  <Label resid="ReportPhishing.Label"/>
                   <Supertip>
-                    <Title resid="TaskpaneButton.Label"/>
-                    <Description resid="TaskpaneButton.Tooltip"/>
-                  </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="Icon.16x16"/>
-                    <bt:Image size="32" resid="Icon.32x32"/>
-                    <bt:Image size="80" resid="Icon.80x80"/>
-                  </Icon>
-                  <Action xsi:type="ShowTaskpane">
-                    <SourceLocation resid="Taskpane.Url"/>
-                  </Action>
-                </Control>
-                <Control xsi:type="Button" id="ActionButton">
-                  <Label resid="ActionButton.Label"/>
-                  <Supertip>
-                    <Title resid="ActionButton.Label"/>
-                    <Description resid="ActionButton.Tooltip"/>
+                    <Title resid="ReportPhishing.Label"/>
+                    <Description resid="ReportPhishing.Tooltip"/>
                   </Supertip>
                   <Icon>
                     <bt:Image size="16" resid="Icon.16x16"/>
@@ -74,7 +58,7 @@
                     <bt:Image size="80" resid="Icon.80x80"/>
                   </Icon>
                   <Action xsi:type="ExecuteFunction">
-                    <FunctionName>action</FunctionName>
+                    <FunctionName>reportPhishing</FunctionName>
                   </Action>
                 </Control>
               </Group>
@@ -91,16 +75,13 @@
       </bt:Images>
       <bt:Urls>
         <bt:Url id="Commands.Url" DefaultValue="https://j4k0b06.github.io/outlook-plugin/commands.html"/>
-        <bt:Url id="Taskpane.Url" DefaultValue="https://j4k0b06.github.io/outlook-plugin/taskpane.html"/>
       </bt:Urls>
       <bt:ShortStrings>
-        <bt:String id="GroupLabel" DefaultValue="Safebyte Tools"/>
-        <bt:String id="TaskpaneButton.Label" DefaultValue="Show Task Pane"/>
-        <bt:String id="ActionButton.Label" DefaultValue="Perform an action"/>
+        <bt:String id="GroupLabel" DefaultValue="Safebyte"/>
+        <bt:String id="ReportPhishing.Label" DefaultValue="Report Phishing"/>
       </bt:ShortStrings>
       <bt:LongStrings>
-        <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Opens a pane displaying all available properties."/>
-        <bt:String id="ActionButton.Tooltip" DefaultValue="Perform an action when clicked."/>
+        <bt:String id="ReportPhishing.Tooltip" DefaultValue="Send this email to phishing@safebyte.be for review."/>
       </bt:LongStrings>
     </Resources>
   </VersionOverrides>
