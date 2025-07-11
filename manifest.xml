@@ -26,8 +26,13 @@
     </Sets>
   </Requirements>
   <FormSettings>
-    <Form xsi:type="ItemRead"/>
+    <Form xsi:type="ItemRead">
+      <DesktopSettings>
+        <SourceLocation DefaultValue="https://j4k0b06.github.io/outlook-plugin/commands.html" />
+      </DesktopSettings>
+    </Form>
   </FormSettings>
+           
   <Permissions>ReadWriteItem</Permissions>
   <Rule xsi:type="RuleCollection" Mode="Or">
     <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read"/>
